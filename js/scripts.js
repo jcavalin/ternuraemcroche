@@ -78,7 +78,7 @@ $(document).ready(function() {
         // Animation out speed (ms)
         scrollText: '<span class="btn btn-square btn-rounded btn-icon"><i class="fa fa-arrow-circle-up"></i></span>',
         // Text for element, can contain HTML
-        scrollTitle: false,
+        scrollTitle: 'Ir para o início',
         // Set a custom <a> title if required. Defaults to scrollText
         scrollImg: false,
         // Set true to use image
