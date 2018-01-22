@@ -76,7 +76,7 @@ $(document).ready(function() {
         // Animation in speed (ms)
         animationOutSpeed: 200,
         // Animation out speed (ms)
-        scrollText: '<span class="btn btn-square btn-rounded btn-icon"><i class="et-chevron-small-up"></i></span>',
+        scrollText: '<span class="btn btn-square btn-rounded btn-icon"><i class="fa fa-arrow-circle-up"></i></span>',
         // Text for element, can contain HTML
         scrollTitle: false,
         // Set a custom <a> title if required. Defaults to scrollText
