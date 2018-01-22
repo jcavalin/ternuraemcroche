@@ -347,6 +347,9 @@ footer.footer-bg {
 .label a {
     color: #FFF !important;
 }
+.small{
+    font-size: 75%
+}
 /*-----------------------------------------------------------------------------------*/
 /*	BUTTON
 /*-----------------------------------------------------------------------------------*/
@@ -766,41 +769,19 @@ footer p {
     width: 44px;
     height: 44px;
 }
-.color-s-500px,
-a.color-s-500px:hover,
-.social-color .et-500px {
-    color: #00a6df;
-}
-.color-s-facebook,
-a.color-s-facebook:hover,
-.social-color .et-facebook {
-    color: #4470cf;
-}
-.color-s-instagram,
-a.color-s-instagram:hover,
-.social-color .et-instagram {
-    color: #d53581;
-}
-.color-s-pinterest,
-a.color-s-pinterest:hover,
-.social-color .et-pinterest {
-    color: #c53942;
-}
-.color-s-twitter,
-a.color-s-twitter:hover,
-.social-color .et-twitter {
-    color: #5daed5;
-}
 .social-bg .et-500px {
     background: #00a6df;
 }
-.social-bg .et-facebook {
+.social-bg .fa-facebook {
     background: #4470cf;
 }
-.social-bg .et-mail {
+.social-bg .fa-envelope {
     background: #32C5D2;
 }
-.social-bg .et-instagram {
+.social-bg .fa-whatsapp {
+    background: #0dc143;
+}
+.social-bg .fa-instagram {
     background: #d53581;
 }
 /*-----------------------------------------------------------------------------------*/
