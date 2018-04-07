@@ -1,0 +1,39 @@
+categorias:
+  - title: Bonecas
+    class: boneca
+  - title: Personagens
+    class: personagem
+  - title: Unicórnios
+    class: unicornio
+
+itens:
+  - title: Unicórnio colorido
+    description: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.
+    description_full: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs.
+    category: unicornio
+    id: unicornio_3
+    fotos: 3
+  - title: Pucca
+    description: Cerca de 19cm altura e 17cm de largura.
+    description_full: Cerca de 19cm de altura e 17cm de largura. Tempo de execução 16hs.
+    category: personagem
+    id: personagem_2
+    fotos: 4
+  - title: Boneca loirinha
+    description: Cerca de 17cm de altura e 13cm de largura.
+    description_full: Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.
+    category: boneca
+    id: boneca_3
+    fotos: 4
+  - title: Boneca de cabelo solto
+    description: Cerca de 17cm de altura e 13cm de largura.
+    description_full: Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.
+    category: boneca
+    id: boneca_4
+    fotos: 4
+  - title: Boneca de macacão
+    description: Cerca de 17cm de altura e 13cm de largura.
+    description_full: Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.
+    category: boneca
+    id: boneca_1
+    fotos: 5

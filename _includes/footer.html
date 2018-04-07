@@ -16,7 +16,7 @@
                     <ul class="social social-bg social-s">
                         {% for social in site.social %}
                         <li>
-                            <a href="{{ social[1] }}" target="_blank" title="{{ social[0] }}">
+                            <a href="{{ social[1].url }}" target="_blank" title="{{ social[1].title }}">
                                 <i class="fa fa-{{ social[0] }}"></i>
                             </a>
                         </li>

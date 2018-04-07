@@ -2,11 +2,17 @@
 title: Ternura em Crochê
 description: Todos os nossos produtos são feitos à mão com todo o cuidado e carinho. Faça sua encomenda.
 owner: jcavalin
-url: "https://jcavalin.github.io/ternuraemcroche/"
+url: https://jcavalin.github.io/ternuraemcroche/
 social:
-  facebook-square: https://www.facebook.com/ternuraemcroche
-  envelope: mailto:ternuraemcroche@gmail.com
-  whatsapp: https://api.whatsapp.com/send?phone=5561981553872
+  facebook-square:
+    title: Facebook
+    url: https://www.facebook.com/ternuraemcroche
+  envelope:
+    title: Email
+    url: mailto:ternuraemcroche@gmail.com
+  whatsapp:
+    title: Whatsapp
+    url: https://api.whatsapp.com/send?phone=5561981553872
 
 # Build settings
 markdown: kramdown

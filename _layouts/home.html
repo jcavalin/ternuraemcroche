@@ -10,74 +10,35 @@ layout: default
     <div class="isotope-filter button-group text-center" data-target=".grid-1">
         <ul>
             <li><a class="button active" data-filter="*">Todos</a></li>
-            <li><a class="button" data-filter=".boneca">Bonecas</a></li>
-            <li><a class="button" data-filter=".personagem">Personagens</a></li>
-            <li><a class="button" data-filter=".unicornio">Unicórnios</a></li>
+            {% for categoria in site.data.portifolio.categorias %}
+                <li><a class="button" data-filter=".{{ categoria.class }}">{{ categoria.title }}</a></li>
+            {% endfor %}
         </ul>
     </div>
     <div class="clearfix"></div>
     <div class="tiles tiles-m">
         <div class="isotope row grid-1">
-            <div class="item grid-sizer col-sm-6 col-md-4 unicornio">
-                <figure class="overlay overlay9">
-                    <a href="#unicornio3" data-toggle="modal" data-target="#unicornio3"></a>
-                    <img src="img/portifolio/unicornio_3/1.jpg" alt="Unicórnio colorido"/>
-                    <figcaption>
-                        <h4>Unicórnio colorido</h4>
-                        <div class="meta mb-0">Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 personagem">
-                <figure class="overlay overlay9">
-                    <a href="#personagem2" data-toggle="modal" data-target="#personagem2"></a>
-                    <img src="img/portifolio/personagem_2/1.jpg" alt="Pucca"/>
-                    <figcaption>
-                        <h4>Pucca</h4>
-                        <div class="meta mb-0">Cerca de 19cm altura e 17cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 boneca">
-                <figure class="overlay overlay9">
-                    <a href="#boneca3" data-toggle="modal" data-target="#boneca3"></a>
-                    <img src="img/portifolio/boneca_3/1.jpg" alt="Boneca loirinha"/>
-                    <figcaption>
-                        <h4>Boneca loirinha</h4>
-                        <div class="meta mb-0">Cerca de 17cm de altura e 13cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 boneca">
-                <figure class="overlay overlay9">
-                    <a href="#boneca4" data-toggle="modal" data-target="#boneca4"></a>
-                    <img src="img/portifolio/boneca_4/1.jpg" alt="Boneca de cabelo solto"/>
-                    <figcaption>
-                        <h4>Boneca de cabelo solto</h4>
-                        <div class="meta mb-0">Cerca de 17cm de altura e 13cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 boneca">
-                <figure class="overlay overlay9">
-                    <a href="#boneca1" data-toggle="modal" data-target="#boneca1"></a>
-                    <img src="img/portifolio/boneca_1/1.jpg" alt="Boneca de macacão"/>
-                    <figcaption>
-                        <h4>Boneca de macacão</h4>
-                        <div class="meta mb-0">Cerca de 17cm de altura e 13cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
+            {% for item in site.data.portifolio.itens %}
+                <div class="item grid-sizer col-sm-6 col-md-4 {{ item.category }}">
+                    <figure class="overlay overlay9">
+                        <a href="#{{ item.id }}" data-toggle="modal" data-target="#{{ item.id }}"></a>
+                        <img src="{{ '/img/portifolio/' | append: item.id | append: '/1.jpg' | prepend: site.baseurl }}" alt="{{ item.title }}"/>
+                        <figcaption>
+                            <h4>{{ item.title }}</h4>
+                            <div class="meta mb-0">
+                                {{ item.description }}
+                            </div>
+                            <!-- /.meta -->
+                        </figcaption>
+                    </figure>
+                </div>
+                <!-- /column -->
+            {% endfor %}
+
+
+
+
+
             <div class="item grid-sizer col-sm-6 col-md-4 boneca">
                 <figure class="overlay overlay9">
                     <a href="#boneca2" data-toggle="modal" data-target="#boneca2"></a>
@@ -132,24 +93,28 @@ layout: default
     </div>
     <!--/.tiles -->
 
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="boneca1" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Boneca de macacão</h2>
-                <p>Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.</p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/boneca_1/1.jpg" alt="Boneca de macacão"></li>
-                    <li><img src="img/portifolio/boneca_1/2.jpg" alt="Boneca de macacão"></li>
-                    <li><img src="img/portifolio/boneca_1/3.jpg" alt="Boneca de macacão"></li>
-                    <li><img src="img/portifolio/boneca_1/4.jpg" alt="Boneca de macacão"></li>
-                    <li><img src="img/portifolio/boneca_1/5.jpg" alt="Boneca de macacão"></li>
-                </ul>
+
+    {% for item in site.data.portifolio.itens %}
+        <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="{{ item.id }}" tabindex="-1"
+             role="dialog">
+            <a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content text-center">
+                    <h2 class="post-title">{{ item.title }}</h2>
+                    <p> {% if item.description_full %}{{ item.description_full }}{% else %}{{ item.description }}{% endif %} </p>
+                    <div class="divide10"></div>
+                    <ul class="basic-gallery">
+                        {% for foto in (1..item.fotos) %}
+                        <li>
+                            <img src="{{ '/img/portifolio/' | append: item.id | append: '/' | append: foto | append : '.jpg' | prepend: site.baseurl }}" alt="{{ item.title }}"/>"
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <!--/.modal -->
+        <!--/.modal -->
+    {% endfor %}
 
     <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="boneca2" tabindex="-1"
          role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
@@ -220,79 +185,6 @@ layout: default
                     <li><img src="img/portifolio/personagem_1/2.jpg" alt="Snoopy"></li>
                     <li><img src="img/portifolio/personagem_1/3.jpg" alt="Snoopy"></li>
                     <li><img src="img/portifolio/personagem_1/4.jpg" alt="Snoopy"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="unicornio3" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Unicórnio colorido</h2>
-                <p> Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs. </p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/unicornio_3/1.jpg" alt="Unicórnio colorido"></li>
-                    <li><img src="img/portifolio/unicornio_3/2.jpg" alt="Unicórnio colorido"></li>
-                    <li><img src="img/portifolio/unicornio_3/2.jpg" alt="Unicórnio colorido"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="personagem2" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Pucca</h2>
-                <p> Cerca de 19cm de altura e 17cm de largura. Tempo de execução 16hs. </p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/personagem_2/1.jpg" alt="Pucca"></li>
-                    <li><img src="img/portifolio/personagem_2/2.jpg" alt="Pucca"></li>
-                    <li><img src="img/portifolio/personagem_2/3.jpg" alt="Pucca"></li>
-                    <li><img src="img/portifolio/personagem_2/4.jpg" alt="Pucca"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="boneca3" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Boneca loirinha</h2>
-                <p>Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.</p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/boneca_3/1.jpg" alt="Boneca loirinha"></li>
-                    <li><img src="img/portifolio/boneca_3/2.jpg" alt="Boneca loirinha"></li>
-                    <li><img src="img/portifolio/boneca_3/3.jpg" alt="Boneca loirinha"></li>
-                    <li><img src="img/portifolio/boneca_3/4.jpg" alt="Boneca loirinha"></li>
-                    <li><img src="img/portifolio/boneca_3/5.jpg" alt="Boneca loirinha"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="boneca4" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Boneca de cabelo solto</h2>
-                <p>Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.</p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/boneca_4/1.jpg" alt="Boneca de cabelo solto"></li>
-                    <li><img src="img/portifolio/boneca_4/2.jpg" alt="Boneca de cabelo solto"></li>
-                    <li><img src="img/portifolio/boneca_4/3.jpg" alt="Boneca de cabelo solto"></li>
-                    <li><img src="img/portifolio/boneca_4/4.jpg" alt="Boneca de cabelo solto"></li>
-                    <li><img src="img/portifolio/boneca_4/5.jpg" alt="Boneca de cabelo solto"></li>
                 </ul>
             </div>
         </div>
