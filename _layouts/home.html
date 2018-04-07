@@ -11,7 +11,7 @@ layout: default
         <ul>
             <li><a class="button active" data-filter="*">Todos</a></li>
             {% for categoria in site.data.portifolio.categorias %}
-                <li><a class="button" data-filter=".{{ categoria.class }}">{{ categoria.title }}</a></li>
+            <li><a class="button" data-filter=".{{ categoria.class }}">{{ categoria.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -19,176 +19,49 @@ layout: default
     <div class="tiles tiles-m">
         <div class="isotope row grid-1">
             {% for item in site.data.portifolio.itens %}
-                <div class="item grid-sizer col-sm-6 col-md-4 {{ item.category }}">
-                    <figure class="overlay overlay9">
-                        <a href="#{{ item.id }}" data-toggle="modal" data-target="#{{ item.id }}"></a>
-                        <img src="{{ '/img/portifolio/' | append: item.id | append: '/1.jpg' | prepend: site.baseurl }}" alt="{{ item.title }}"/>
-                        <figcaption>
-                            <h4>{{ item.title }}</h4>
-                            <div class="meta mb-0">
-                                {{ item.description }}
-                            </div>
-                            <!-- /.meta -->
-                        </figcaption>
-                    </figure>
-                </div>
-                <!-- /column -->
+            <div class="item grid-sizer col-sm-6 col-md-4 {{ item.category }}">
+                <figure class="overlay overlay9">
+                    <a href="#{{ item.id }}" data-toggle="modal" data-target="#{{ item.id }}"></a>
+                    <img src="{{ '/img/portifolio/' | append: item.id | append: '/1.jpg' | prepend: site.baseurl }}"
+                         alt="{{ item.title }}"/>
+                    <figcaption>
+                        <h4>{{ item.title }}</h4>
+                        <div class="meta mb-0">
+                            {{ item.description }}
+                        </div>
+                        <!-- /.meta -->
+                    </figcaption>
+                </figure>
+            </div>
+            <!-- /column -->
             {% endfor %}
-
-
-
-
-
-            <div class="item grid-sizer col-sm-6 col-md-4 boneca">
-                <figure class="overlay overlay9">
-                    <a href="#boneca2" data-toggle="modal" data-target="#boneca2"></a>
-                    <img src="img/portifolio/boneca_2/1.jpg" alt="Boneca de vestido"/>
-                    <figcaption>
-                        <h4>Boneca de vestido</h4>
-                        <div class="meta mb-0">Cerca de 17cm de altura e 13cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 unicornio">
-                <figure class="overlay overlay9">
-                    <a href="#unicornio1" data-toggle="modal" data-target="#unicornio1"></a>
-                    <img src="img/portifolio/unicornio_1/1.jpg" alt="Unicórnio vermelho"/>
-                    <figcaption>
-                        <h4>Unicórnio vermelho</h4>
-                        <div class="meta mb-0">Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 personagem">
-                <figure class="overlay overlay9">
-                    <a href="#personagem1" data-toggle="modal" data-target="#personagem1"></a>
-                    <img src="img/portifolio/personagem_1/1.jpg" alt="Snoopy"/>
-                    <figcaption>
-                        <h4>Snoopy</h4>
-                        <div class="meta mb-0">Cerca de 17cm de altura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
-            <div class="item grid-sizer col-sm-6 col-md-4 unicornio">
-                <figure class="overlay overlay9">
-                    <a href="#unicornio2" data-toggle="modal" data-target="#unicornio2"></a>
-                    <img src="img/portifolio/unicornio_2/1.jpg" alt="Unicórnio azul"/>
-                    <figcaption>
-                        <h4>Unicórnio azul</h4>
-                        <div class="meta mb-0">Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.</div>
-                        <!-- /.meta -->
-                    </figcaption>
-                </figure>
-            </div>
-            <!-- /column -->
         </div>
         <!--/.row -->
-
     </div>
     <!--/.tiles -->
 
-
     {% for item in site.data.portifolio.itens %}
-        <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="{{ item.id }}" tabindex="-1"
-             role="dialog">
-            <a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content text-center">
-                    <h2 class="post-title">{{ item.title }}</h2>
-                    <p> {% if item.description_full %}{{ item.description_full }}{% else %}{{ item.description }}{% endif %} </p>
-                    <div class="divide10"></div>
-                    <ul class="basic-gallery">
-                        {% for foto in (1..item.fotos) %}
-                        <li>
-                            <img src="{{ '/img/portifolio/' | append: item.id | append: '/' | append: foto | append : '.jpg' | prepend: site.baseurl }}" alt="{{ item.title }}"/>"
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="{{ item.id }}" tabindex="-1"
+         role="dialog">
+        <a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-center">
+                <h2 class="post-title">{{ item.title }}</h2>
+                <p> {% if item.description_full %}{{ item.description_full }}{% else %}{{ item.description }}{% endif
+                    %} </p>
+                <div class="divide10"></div>
+                <ul class="basic-gallery">
+                    {% for foto in (1..item.fotos) %}
+                    <li>
+                        <img src="{{ '/img/portifolio/' | append: item.id | append: '/' | append: foto | append : '.jpg' | prepend: site.baseurl }}"
+                             alt="{{ item.title }}"/>"
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
-        <!--/.modal -->
+    </div>
+    <!--/.modal -->
     {% endfor %}
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="boneca2" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Boneca de vestido</h2>
-                <p>Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.</p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/boneca_2/1.jpg" alt="Boneca de vestido"></li>
-                    <li><img src="img/portifolio/boneca_2/2.jpg" alt="Boneca de vestido"></li>
-                    <li><img src="img/portifolio/boneca_2/3.jpg" alt="Boneca de vestido"></li>
-                    <li><img src="img/portifolio/boneca_2/4.jpg" alt="Boneca de vestido"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="unicornio1" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Unicórnio vermelho</h2>
-                <p> Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs. </p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/unicornio_1/1.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/2.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/3.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/4.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/5.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/6.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/7.jpg" alt="Unicórnio vermelho"></li>
-                    <li><img src="img/portifolio/unicornio_1/8.jpg" alt="Unicórnio vermelho"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="unicornio2" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Unicórnio azul</h2>
-                <p> Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs. </p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/unicornio_2/1.jpg" alt="Unicórnio azul"></li>
-                    <li><img src="img/portifolio/unicornio_2/2.jpg" alt="Unicórnio azul"></li>
-                    <li><img src="img/portifolio/unicornio_2/3.jpg" alt="Unicórnio azul"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
-
-    <div class="modal dark-wrapper inverse-text modal-transparent move-from-top" id="personagem1" tabindex="-1"
-         role="dialog"><a href="#" class="btn-close" data-dismiss="modal" aria-label="Close"></a>
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content text-center">
-                <h2 class="post-title">Snoopy</h2>
-                <p> Cerca de 17cm de altura. </p>
-                <div class="divide10"></div>
-                <ul class="basic-gallery">
-                    <li><img src="img/portifolio/personagem_1/1.jpg" alt="Snoopy"></li>
-                    <li><img src="img/portifolio/personagem_1/2.jpg" alt="Snoopy"></li>
-                    <li><img src="img/portifolio/personagem_1/3.jpg" alt="Snoopy"></li>
-                    <li><img src="img/portifolio/personagem_1/4.jpg" alt="Snoopy"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.modal -->
 </div>
 <!--/.portfolio -->

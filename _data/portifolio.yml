@@ -37,3 +37,26 @@ itens:
     category: boneca
     id: boneca_1
     fotos: 5
+  - title: Boneca de vestido
+    description: Cerca de 17cm de altura e 13cm de largura.
+    description_full: Cerca de 17cm de altura e 13cm de largura. Tempo de execução 16hs.
+    category: boneca
+    id: boneca_2
+    fotos: 4
+  - title: Unicórnio vermelho
+    description: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.
+    description_full: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs.
+    category: unicornio
+    id: unicornio_1
+    fotos: 8
+  - title: Snoopy
+    description: Cerca de 17cm de altura.
+    category: personagem
+    id: personagem_1
+    fotos: 4
+  - title: Unicórnio azul
+    description: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.
+    description_full: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs.
+    category: unicornio
+    id: unicornio_2
+    fotos: 3
