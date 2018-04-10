@@ -54,7 +54,7 @@ layout: default
                     {% for foto in (1..item.fotos) %}
                     <li>
                         <img src="{{ '/img/portifolio/' | append: item.id | append: '/' | append: foto | append : '.jpg' | prepend: site.baseurl }}"
-                             alt="{{ item.title }}"/>"
+                             alt="{{ item.title }}"/>
                     </li>
                     {% endfor %}
                 </ul>
