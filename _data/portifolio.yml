@@ -16,27 +16,28 @@ categorias:
 
 itens:
   - title: Dino bebê
-    description: Dimensões aproximadas: altura 9 cm, largura 20 cm.
+    description: Aproximadamente 9cm de altura e 20cm de largura.
     category: dino
     id: dino_1
     fotos: 6
   - title: Gato colorido
-    description: Dimensões aproximadas: altura 22 cm, largura 13cm.
+    description: Aproximadamente 22cm de altura e 13cm de largura.
     category: gato
     id: gato_1
     fotos: 6
   - title: Leão
-    description: Dimensões aproximadas: altura 23cm, largura 19 cm.
+    description: Aproximadamente 23cm de altura e 19cm de largura.
     category: leao
     id: leao_1
     fotos: 6
   - title: Coelho
-    description: Dimensões aproximadas: altura 45 cm, largura 28cm. Cenoura alt. 16cm, largura 6 cm.
+    description: Aproximadamente 45cm de altura e 28cm de largura.
+    description_full: Aproximadamente 45cm de altura e 28cm de largura. Cenoura aproximadamente 16cm de altura e 6cm de largura.
     category: coelho
     id: coelho_1
     fotos: 4
   - title: Coraline
-    description: Dimensões aproximadas: altura 26cm, largura 13cm.
+    description: Aproximadamente 26cm de altura e 13cm de largura.
     category: personagem
     id: personagem_3
     fotos: 4
