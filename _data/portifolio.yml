@@ -5,8 +5,41 @@ categorias:
     class: personagem
   - title: Unicórnios
     class: unicornio
+  - title: Coelhos
+    class: coelho
+  - title: Gatos
+    class: gato
+  - title: Leôes
+    class: leao
+  - title: Dinos
+    class: dino
 
 itens:
+  - title: Dino bebê
+    description: Dimensões aproximadas: altura 9 cm, largura 20 cm.
+    category: dino
+    id: dino_1
+    fotos: 6
+  - title: Gato colorido
+    description: Dimensões aproximadas: altura 22 cm, largura 13cm.
+    category: gato
+    id: gato_1
+    fotos: 6
+  - title: Leão
+    description: Dimensões aproximadas: altura 23cm, largura 19 cm.
+    category: leao
+    id: leao_1
+    fotos: 6
+  - title: Coelho
+    description: Dimensões aproximadas: altura 45 cm, largura 28cm. Cenoura alt. 16cm, largura 6 cm.
+    category: coelho
+    id: coelho_1
+    fotos: 4
+  - title: Coraline
+    description: Dimensões aproximadas: altura 26cm, largura 13cm.
+    category: personagem
+    id: personagem_3
+    fotos: 4
   - title: Unicórnio colorido
     description: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura.
     description_full: Cerca de 32cm de altura deitado, 22cm sentado e 23cm de largura. Tempo de execução 20hs.
