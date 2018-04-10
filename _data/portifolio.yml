@@ -24,7 +24,7 @@ itens:
     description: Aproximadamente 22cm de altura e 13cm de largura.
     category: gato
     id: gato_1
-    fotos: 6
+    fotos: 5
   - title: Leão
     description: Aproximadamente 23cm de altura e 19cm de largura.
     category: leao
